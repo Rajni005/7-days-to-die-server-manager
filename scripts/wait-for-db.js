@@ -12,7 +12,7 @@ pWaitFor(
     .then(() => true)
     .catch((err) => { console.log(err.toString()); return false; }),
   {
-    interval: 2000,
-    timeout: 200000,
+    interval: 1000,
+    timeout: 300000,
   }
 ).then(console.log, console.error);
