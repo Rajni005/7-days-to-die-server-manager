@@ -74,7 +74,7 @@ before(async function () {
         default: {
           adapter: 'sails-mysql',
           url: process.env.TEST_DBSTRING || process.env.DBSTRING,
-          charset: 'utf8mb4'
+          charset: 'utf8'
         },
         cache: {
           adapter: 'sails-redis',
@@ -156,7 +156,9 @@ function clearRedis() {
         return proceed(undefined, reply);
       });
     }).exec((err, result) => {
-      if (err) { return reject(err); }
+      if (err) {
+        console.log('ERROR!');
+        return reject(err); }
 
       return resolve(result);
     });
